@@ -15,8 +15,10 @@ body {
     width: 100vw;
     height: 100vh;
     display: flex;
+    flex-direction: column;
+    gap: 20px;
     justify-content: center;
-    align-items: center;  
+    align-items: center;
     padding: 5%;
 }
 
@@ -92,14 +94,37 @@ body {
     text-align: center;
 }
 
+.temp {
+    font-size: 2rem;
+    font-weight: 900;
+}
+
 .notfound {
     color: red;
 }
 
+
+
+.refresh path {
+    fill: #fff;
+    cursor: pointer;
+}
+
+.refresh path:hover {
+    fill: #dddb70;
+}
+
+.refresh path:active {
+    fill: #fff;
+}
+
 @media screen and (max-width: 510px) {
-    .weather, .select-location {
+
+    .weather,
+    .select-location {
         max-width: 330px;
     }
+
     .input {
         padding: 1rem 2rem;
         font-size: 1rem;

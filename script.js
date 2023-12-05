@@ -36,6 +36,8 @@ const input = document.querySelector(".input");
 let weatherContainer = document.querySelector(".weather");
 let locationElement = document.querySelector(".select-location");
 let notfound = document.querySelector(".notfound");
+let refresh = document.querySelector(".refresh");
+const reload = refresh.querySelector("svg");
 
 function getWeather(city) {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${KEY}`;
@@ -101,6 +103,7 @@ function getWeather(city) {
 
       locationElement.style.display = "none";
       weatherContainer.style.display = "flex";
+      refresh.style.display = "";
     });
 }
 
@@ -110,7 +113,7 @@ button.addEventListener("click", () => {
 
 input.addEventListener("focus", () => {
   input.setAttribute("placeholder", "");
-  notfound.style.display = 'none';
+  notfound.style.display = "none";
 });
 
 input.addEventListener("focusout", () => {
@@ -118,3 +121,5 @@ input.addEventListener("focusout", () => {
     input.setAttribute("placeholder", "Enter location");
   }
 });
+
+reload.addEventListener("click", () => location.reload());
