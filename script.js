@@ -53,46 +53,13 @@ function getWeather(city) {
       const temp = json.main.temp;
       const pressure = json.main.pressure;
       const windSpeed = json.wind.speed;
-      let image;
-      let weatherDescription;
-
-      switch (json.weather[0].main) {
-        case "Clear":
-          image = weather.clear.picture;
-          weatherDescription = weather.clear.name;
-          break;
-        case "Clouds":
-          image = weather.clouds.picture;
-          weatherDescription = weather.clouds.name;
-          break;
-        case "Drizzle":
-          image = weather.drizzle.picture;
-          weatherDescription = weather.drizzle.name;
-          break;
-        case "Mist":
-          image = weather.mist.picture;
-          weatherDescription = weather.mist.name;
-          break;
-        case "Rain":
-          image = weather.rain.picture;
-          weatherDescription = weather.rain.name;
-          break;
-        case "Snow":
-          image = weather.snow.picture;
-          weatherDescription = weather.snow.name;
-          break;
-        case "Thunderstorm":
-          image = weather.thunderstorm.picture;
-          weatherDescription = weather.thunderstorm.name;
-          break;
-        default:
-          image = weather.clear.picture;
-          weatherDescription = json.weather[0].main;
-      }
+      const description = json.weather[0].main.toLowerCase();
+      let image = weather[description].picture;
+      let weatherDescription = weather[description].name;
 
       weatherContainer.querySelector(".city").textContent = city;
       weatherContainer.querySelector(".weather-img img").src = image;
-      weatherContainer.querySelector(".temp").textContent = `${temp}°С`;
+      weatherContainer.querySelector(".temp").textContent = `${parseInt(temp)}°С`;
       weatherContainer.querySelector(".descr").textContent = weatherDescription;
       weatherContainer.querySelector(
         ".windspeed"
