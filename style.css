@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+body {
+    background-color: #06283D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    padding: 5%;
+}
+
+.hidden {
+    display: none;
+}
+
+.select-location {
+    background-color: #fff;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.select-location-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.input {
+    padding: 1.5rem 2rem;
+    border: 1px solid #06283D;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.button {
+    border: none;
+    background-color: #06283D;
+    color: #fff;
+    padding: 1rem 3rem;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #114f75;
+}
+
+.button:active {
+    background-color: #06283D;
+}
+
+.weather {
+    background-color: #fff;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px;
+}
+
+.weather-img {
+    width: 150px;
+}
+
+.weather-img img {
+    width: 100%;
+}
+
+.city {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.notfound {
+    color: red;
+}
+
+@media screen and (max-width: 510px) {
+    .weather, .select-location {
+        max-width: 330px;
+    }
+    .input {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+}
